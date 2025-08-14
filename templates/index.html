@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>Gerenciador de Câmeras</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <h1><i class="fas fa-video"></i> Sistema de Gerenciamento de Câmeras</h1>
+    
+    <div id="cameraForm">
+        <h2><i class="fas fa-plus-circle"></i> Adicionar Nova Câmera</h2>
+        <form id="addCameraForm">
+            <input type="text" id="name" placeholder="Nome" required>
+            <input type="text" id="ip" placeholder="Endereço IP" required>
+            <input type="number" id="port" placeholder="Porta" required>
+            <input type="text" id="username" placeholder="Usuário" required>
+            <input type="password" id="password" placeholder="Senha" required>
+            <button type="submit"><i class="fas fa-save"></i> Adicionar Câmera</button>
+        </form>
+    </div>
+
+    <div id="cameraList">
+        <h2><i class="fas fa-camera"></i> Câmeras Cadastradas</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>IP</th>
+                    <th>Porta</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody id="camerasTableBody">
+                <!-- Dados serão preenchidos via JavaScript -->
+            </tbody>
+        </table>
+    </div>
+
+    <div id="configView" style="display:none;">
+        <div class="config-header">
+            <h2>Configuração da Câmera: <span id="cameraName"></span></h2>
+            <button id="backButton"><i class="fas fa-arrow-left"></i> Voltar para Lista</button>
+        </div>
+        
+        <!-- Abas principais -->
+        <div class="tabs">
+            <button class="tab-button active" data-tab="system"><i class="fas fa-cog"></i> Sistema</button>
+            <button class="tab-button" data-tab="network"><i class="fas fa-network-wired"></i> Rede</button>
+            <button class="tab-button" data-tab="video"><i class="fas fa-video"></i> Vídeo</button>
+            <button class="tab-button" data-tab="audio"><i class="fas fa-volume-up"></i> Áudio</button>
+            <button class="tab-button" data-tab="ptz"><i class="fas fa-sync-alt"></i> PTZ</button>
+            <button class="tab-button" data-tab="detection"><i class="fas fa-motion"></i> Detecção</button>
+            <button class="tab-button" data-tab="nightvision"><i class="fas fa-moon"></i> Visão Noturna</button>
+        </div>
+        
+        <!-- Conteúdo das abas principais -->
+        <div class="tab-content">
+            <div id="system-tab" class="tab-pane active">
+                <div class="sub-tabs"></div>
+                <div class="sub-tab-content"></div>
+            </div>
+            <div id="network-tab" class="tab-pane">
+                <div class="sub-tabs"></div>
+                <div class="sub-tab-content"></div>
+            </div>
+            <div id="video-tab" class="tab-pane">
+                <div class="sub-tabs"></div>
+                <div class="sub-tab-content"></div>
+            </div>
+            <div id="audio-tab" class="tab-pane">
+                <div class="sub-tabs"></div>
+                <div class="sub-tab-content"></div>
+            </div>
+            <div id="ptz-tab" class="tab-pane">
+                <div class="sub-tabs"></div>
+                <div class="sub-tab-content"></div>
+            </div>
+            <div id="detection-tab" class="tab-pane">
+                <div class="sub-tabs"></div>
+                <div class="sub-tab-content"></div>
+            </div>
+            <div id="nightvision-tab" class="tab-pane">
+                <div class="sub-tabs"></div>
+                <div class="sub-tab-content"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/metadata.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
