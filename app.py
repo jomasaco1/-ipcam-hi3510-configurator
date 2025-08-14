@@ -70,15 +70,17 @@ def get_config(camera_id):
             'getserverinfo',
             'getdevtype',
             'getossattr',
-            'getsystemtime',
+            'getservertime',
             'getupnpattr'
         ],
         'network': [
-            'getnetattr',
-            'getwirelessattr',
-            'getportattr',
-            'getddnsattr'
-        ],
+    'getnetattr',
+    'getwirelessattr',
+    'gethttpport',       # Adicionado
+    'getrtspport',       # Adicionado
+    'getourddnsattr',    # Específico
+    'get3thddnsattr'     # Específico
+],
         'video': [
             'getvencattr&-chn=011',  # Fluxo principal
             'getvencattr&-chn=012',  # Fluxo secundário
@@ -88,26 +90,22 @@ def get_config(camera_id):
             'getimageattr'
         ],
         'audio': [
-            'getaencattr&-chn=011',
-            'getaencattr&-chn=012',
             'getaudioinvolume',
             'getaudiooutvolume'
         ],
         'ptz': [
             'getptzspeed',
-            'getptzpreset',
-            'getptztour',
-            'getptzlimit'
+            'getmotorattr',
+            'getmotorrange'
         ],
         'detection': [
-            'getmotionalarmattr',
+            'getmdattr',
             'getaudioalarmattr',
-            'getsmartdetectattr'
+            'getsmdattr'
         ],
         'nightvision': [
             'getlightattr',
-            'getircutattr',
-            'getexposureattr'
+            'getircutattr'
         ]
     }
     
