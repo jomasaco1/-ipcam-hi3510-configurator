@@ -7,7 +7,7 @@ const metadata = {
             "getserverinfo",
             "getdevtype",
             "getossattr",
-            "getsystemtime",
+            "getservertime",
             "getupnpattr"
         ],
         groups: [
@@ -28,10 +28,12 @@ const metadata = {
     network: {
         title: "Rede",
         commands: [
-            "getnetattr",
-            "getwirelessattr",
-            "getportattr",
-            "getddnsattr"
+            'getnetattr',
+    'getwirelessattr',
+    'gethttpport',
+    'getrtspport',    
+    'getourddnsattr',
+    'get3thddnsattr'
         ],
         groups: [
             {
@@ -82,8 +84,6 @@ const metadata = {
     audio: {
         title: "Áudio",
         commands: [
-            "getaencattr&-chn=011",
-            "getaencattr&-chn=012",
             "getaudioinvolume",
             "getaudiooutvolume"
         ],
@@ -101,10 +101,7 @@ const metadata = {
     ptz: {
         title: "PTZ",
         commands: [
-            "getptzspeed",
-            "getptzpreset",
-            "getptztour",
-            "getptzlimit"
+            "getptzspeed"
         ],
         groups: [
             {
@@ -124,9 +121,7 @@ const metadata = {
     detection: {
         title: "Detecção",
         commands: [
-            "getmotionalarmattr",
-            "getaudioalarmattr",
-            "getsmartdetectattr"
+            "getaudioalarmattr"
         ],
         groups: [
             {
@@ -147,13 +142,12 @@ const metadata = {
         title: "Visão Noturna",
         commands: [
             "getlightattr",
-            "getircutattr",
-            "getexposureattr"
+            "getircutattr"
         ],
         groups: [
             {
                 title: "IR",
-                variables: ["infraredstat", "lamp_mode", "lamp_timeout"]
+                variables: ["light_enable", "saradc_switch_value", "saradc_b2c_switch_value"]
             },
             {
                 title: "Exposição",
